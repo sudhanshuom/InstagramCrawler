@@ -32,7 +32,7 @@ public class InstagramCrawler {
                 JSONObject j3 = (JSONObject) j2.get("edge_hashtag_to_media");
                 JSONArray nodes = j3.getJSONArray("edges");
 
-                for(int i = 0; i < nodes.length(); i++){
+                for(int i = 0; i < nodes.length() && cc < 100; i++){
                     JSONObject post = (JSONObject) nodes.get(i);
                     JSONObject pos = (JSONObject) post.getJSONObject("node");
                     String po = pos.get("shortcode").toString();
